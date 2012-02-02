@@ -6,6 +6,11 @@ typical directory structure.
 Really, this is just an excuse to play around with vimscript and doesn't consist
 of much.
 
+## Installation
+
+Install [pathogen](ihttps://github.com/tpope/vim-pathogen)
+
+    cd ~/.vim/bundle
     git https://github.com/markryall/generation_x
 
 ## Ruby
