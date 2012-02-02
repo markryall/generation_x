@@ -11,9 +11,9 @@ function! s:RubyCreate(word,args)
   call s:MakeDirP(l:lib_path)
   call s:MakeDirP(l:spec_path)
   execute 'edit ' . l:lib_path
-  execute "normal! i" . a:word . " " . l:name . "\<cr>nend\<esc>ggo  "
+  execute "normal! i" . a:word . " " . l:name . "\<cr>end\<esc>ggo  "
   execute 'edit ' . l:spec_path
-  execute "normal! idescribe " . l:name . " do\nend\<esc>ggo  "
+  execute "normal! idescribe " . l:name . " do\<cr>end\<esc>ggo  "
 endfunction
 
 function! s:ClassifyPath(list)
