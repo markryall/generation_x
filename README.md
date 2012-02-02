@@ -13,7 +13,7 @@ Install [pathogen](ihttps://github.com/tpope/vim-pathogen)
     cd ~/.vim/bundle
     git https://github.com/markryall/generation_x
 
-## Ruby
+## Usage
 
 ### RubyClass
 
@@ -42,3 +42,18 @@ for you to start writing your first spec.
     :RubyModule aardvark_ocelot dog_cat adapter_bridge_interpreter_singleton
 
 Does exactly the same thing as for RubyClass but generates a module.
+
+## Development
+
+The testing uses rspec.  The testing of vim is performed by sending key strokes
+to a tmux session.  You'll need one console for tmux and another for running
+the specs.
+
+Console 1
+
+    tmux
+
+Console 2
+
+    bundle
+    rake
