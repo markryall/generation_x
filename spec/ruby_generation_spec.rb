@@ -33,7 +33,16 @@ end
     EOF
   end
 
-  it 'should not modify an existing class' do
+  it 'should not modify an existing file' do
+    pending
+    file 'lib/class_a.rb', '# a comment'
+    ex 'RubyClass class_a'
+    vi 'ZZ'
+    vi 'ZZ'
+    file('lib/class_a.rb').should == '# a comment'
+  end
+
+  it 'should not modify an existing buffer' do
     pending
     ex 'RubyClass class_a'
     ex 'RubyClass class_a'

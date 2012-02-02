@@ -33,12 +33,18 @@ module Tmux
     File.join [BASE,'tmp','session']+args
   end
 
-  def file path
-    path = base path
-    10.times do
-      return File.read(path) if File.exist? path
-      sleep 0.25
+  def file path, content=nil
+    if content
+      mkdir_p File.dirname(path)
+      File.open('path', 'w') {|file| puts content}
+    else
+      path = base path
+      10.times do
+        return File.read(path) if File.exist? path
+        sleep 0.25
+      end
     end
+    content
   end
 end
 
