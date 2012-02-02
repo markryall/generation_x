@@ -24,6 +24,11 @@ module Tmux
     send_keys 'Escape'
   end
 
+  def buffer
+    system "tmux capture-pane -t0"
+    `tmux show-buffer`
+  end
+
   def read_file path
     10.times do
       return File.read(path) if File.exist? path
