@@ -37,4 +37,4 @@ function! s:ClassifyWord(word)
 endfunction
 
 command! -nargs=* RubyClass call s:RubyCreate('class', <q-args>)
-command! -nargs=* RubyModule call s:RubyCreate('class', <q-args>)
+command! -nargs=* RubyModule call s:RubyCreate('module', <q-args>)
