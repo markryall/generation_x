@@ -29,7 +29,12 @@ module Tmux
     `tmux show-buffer`
   end
 
+  def base *args
+    File.join [BASE,'tmp','session']+args
+  end
+
   def read_file path
+    path = base path
     10.times do
       return File.read(path) if File.exist? path
       sleep 0.25
@@ -41,11 +46,10 @@ RSpec.configure do |c|
   c.include Tmux
 
   c.around(:each) do |example|
-    here = File.expand_path File.dirname(__FILE__)+'/..'
-    rm_rf "#{BASE}/tmp/session"
-    mkdir_p "#{BASE}/tmp/session"
+    rm_rf base
+    mkdir_p base
     send_keys 'C-c'
-    command "cd #{BASE}/tmp/session"
+    command "cd #{base}"
     command 'vim'
     example.run
     send_keys 'Escape'
