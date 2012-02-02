@@ -33,7 +33,7 @@ module Tmux
     File.join [BASE,'tmp','session']+args
   end
 
-  def read_file path
+  def file path
     path = base path
     10.times do
       return File.read(path) if File.exist? path
