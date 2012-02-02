@@ -1,4 +1,4 @@
-= Generation X
+# Generation X
 
 Some vim commands to generate various types of file and create the
 typical directory structure.
@@ -8,23 +8,23 @@ of much.
 
     git https://github.com/markryall/generation_x
 
-== Ruby
+## Ruby
 
-=== RubyClass
+### RubyClass
 
     :RubyClass aardvark_ocelot dog_cat flyweight_helper_builder_factory
 
 This will create the following directory structure:
 
-.
-├── lib
-│   └── aardvark_ocelot
-│       └── dog_cat
-│           └── flyweight_helper_build_factory.rb
-└── spec
-    └── aardvark_ocelot
-        └── dog_cat
-            └── flyweight_helper_build_factory_spec.rb
+    .
+    ├── lib
+    │   └── aardvark_ocelot
+    │       └── dog_cat
+    │           └── flyweight_helper_build_factory.rb
+    └── spec
+        └── aardvark_ocelot
+            └── dog_cat
+                └── flyweight_helper_build_factory_spec.rb
 
 You will find yourself defining the behaviour of the
 AardvarkOcelot::DogCat::FlyweightHelperBuildFactory class in a spec.
@@ -32,6 +32,6 @@ AardvarkOcelot::DogCat::FlyweightHelperBuildFactory class in a spec.
 Both files will be opened in different buffers and put the cursor in position
 for you to start writing your spec.
 
-=== RubyModule
+### RubyModule
 
 Does exactly the same thing but generates a module.
