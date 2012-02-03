@@ -43,7 +43,6 @@ end
   end
 
   it 'should not modify an existing buffer' do
-    pending
     ex 'RubyClass class_a'
     ex 'RubyClass class_a'
     vi 'ZZ'
