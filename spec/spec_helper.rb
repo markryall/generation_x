@@ -7,6 +7,7 @@ module Tmux
 
   def send_keys keys
     system "tmux send-keys -t0 \"#{keys}\""
+    sleep ENV['DELAY'].to_i if ENV['DELAY']
   end
 
   def command cmd
@@ -34,11 +35,11 @@ module Tmux
   end
 
   def file path, content=nil
+    path = base path
     if content
       mkdir_p File.dirname(path)
-      File.open('path', 'w') {|file| puts content}
+      File.open(path, 'w') {|file| file.print content}
     else
-      path = base path
       10.times do
         return File.read(path) if File.exist? path
         sleep 0.25
