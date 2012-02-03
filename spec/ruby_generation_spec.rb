@@ -34,6 +34,7 @@ end
   end
 
   it 'should not modify an existing file' do
+    pending
     file 'lib/class_a.rb', '# a comment'
     ex 'RubyClass class_a'
     vi 'ZZ'
