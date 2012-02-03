@@ -10,13 +10,13 @@ function! s:RubyCreate(word,args)
   let l:spec_path = 'spec/' . join(l:list,'/') . '_spec.rb'
   call s:MakeDirP(l:lib_path)
   call s:MakeDirP(l:spec_path)
-  if bufexists(l:lib_path)
+  if bufexists(l:lib_path) || filereadable(l:lib_path)
     execute 'edit ' . l:lib_path
   else
     execute 'edit ' . l:lib_path
     execute "normal! i" . a:word . " " . l:name . "\<cr>end\<esc>ggo  "
   endif
-  if bufexists(l:spec_path)
+  if bufexists(l:spec_path) || filereadable(l:lib_path)
     execute 'edit ' . l:spec_path
   else
     execute 'edit ' . l:spec_path
